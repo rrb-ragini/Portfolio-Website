@@ -5,89 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Ragini Bhayana</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; background: #f8f9fa; }
-    .section-title { border-bottom: 2px solid #333; margin-bottom: 1rem; padding-bottom: .3rem; }
-    .container { max-width: 900px; }
-    .card { margin-bottom: 20px; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; }
+    header {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white; padding: 60px 20px; border-radius: 0 0 40px 40px;
+    }
+    header h1 { font-weight: bold; font-size: 2.8rem; }
+    header p { font-size: 1.2rem; }
+    .section-title { color: #2575fc; margin-bottom: 1rem; border-left: 5px solid #6a11cb; padding-left: 10px; }
+    .card { border: none; transition: transform .3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+    footer { background: #2575fc; color: white; padding: 15px; margin-top: 40px; border-radius: 20px 20px 0 0; }
+    .progress { height: 10px; }
+    .nav-link { color: #2575fc !important; font-weight: 500; }
+    .nav-link:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="container py-4">
 
-    <!-- Header -->
-    <header class="text-center mb-4">
-      <h1 class="fw-bold">Ragini Bhayana</h1>
-      <p class="lead">MBA (Class of 2026) | Product, Strategy & Finance Enthusiast</p>
-    </header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">Ragini Bhayana</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#por">POR</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="text-center">
+    <h1>Ragini Bhayana</h1>
+    <p>MBA Candidate (Class of 2026) | Strategy • Product • Finance</p>
+    <a href="#contact" class="btn btn-light btn-lg mt-3 shadow-sm">
+      <i class="fas fa-envelope"></i> Contact Me
+    </a>
+  </header>
+
+  <div class="container py-5">
 
     <!-- Education -->
-    <section>
-      <h3 class="section-title">Education</h3>
-      <ul>
-        <li><b>MBA</b>, BITS School of Management, Mumbai (2026, Pursuing)</li>
-        <li><b>B.Tech (ECE)</b>, GGSIPU Delhi – Rank 2 in batch, CGPA 9.2/10 (2023)</li>
-        <li><b>Class XII</b>, Modern School, Delhi – 90% (2018)</li>
-        <li><b>Class X</b>, Modern School, Delhi – 9.6/10 (2016)</li>
+    <section id="education">
+      <h3 class="section-title">🎓 Education</h3>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><b>MBA</b>, BITS School of Management, Mumbai (2026)</li>
+        <li class="list-group-item"><b>B.Tech (ECE)</b>, GGSIPU Delhi – Rank 2, CGPA 9.2/10 (2023)</li>
+        <li class="list-group-item"><b>Class XII</b>, Modern School, Delhi – 90% (2018)</li>
+        <li class="list-group-item"><b>Class X</b>, Modern School, Delhi – 9.6/10 (2016)</li>
       </ul>
     </section>
 
     <!-- Experience -->
-    <section>
-      <h3 class="section-title">Work Experience</h3>
-      <div class="card p-3">
-        <h5>Supervity.AI – Global Strategy & Community Catalyst (Feb’25–Jun’25)</h5>
-        <p>Led 5 PoC demos for Deloitte clients, reduced man-hours by 80% via AI solutions, and managed AI Agents Academy for 100+ learners.</p>
-      </div>
-      <div class="card p-3">
-        <h5>ChildFund India – Research Intern (Dec’24–Feb’25)</h5>
-        <p>Conducted 14,000+ data point analysis on women entrepreneurship programs, showing significant household income rise.</p>
-      </div>
-      <div class="card p-3">
-        <h5>Nokia Solutions – Associate, Cloud & Network Services (Jun’23–Jul’24)</h5>
-        <p>Reduced manual efforts by 90% with automation, ensured 100% accuracy on 4G/5G parameters, and trained subcontractors.</p>
-      </div>
-      <div class="card p-3">
-        <h5>Kylo Apps – Product Intern (Jun’22–Jul’22)</h5>
-        <p>Improved dashboard visibility by 50% and reduced manual errors significantly.</p>
+    <section id="experience" class="mt-5">
+      <h3 class="section-title">💼 Work Experience</h3>
+      <div class="accordion" id="expAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#exp1">Supervity.AI – Global Strategy Intern</button></h2>
+          <div id="exp1" class="accordion-collapse collapse show">
+            <div class="accordion-body">Led 5 PoC demos for Deloitte clients, reduced man-hours by 80%, and managed AI Agents Academy for 100+ learners.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp2">ChildFund India – Research Intern</button></h2>
+          <div id="exp2" class="accordion-collapse collapse">
+            <div class="accordion-body">Analyzed 14,000+ data points on women entrepreneurship, proving significant household income growth.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp3">Nokia – Associate, Cloud & Network Services</button></h2>
+          <div id="exp3" class="accordion-collapse collapse">
+            <div class="accordion-body">Automated processes (90% effort saved), ensured 100% accuracy in 4G/5G metrics, trained subcontractors.</div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Achievements -->
-    <section>
-      <h3 class="section-title">Achievements</h3>
-      <ul>
-        <li>Campus Finalist, SBI Life IdeationX 2.0 (30,000+ participants)</li>
-        <li>Rank 44/907 – Ace the Case 2024, NMIMS Mumbai</li>
-        <li>2nd place, Data Hackathon (BITSoM, 2025)</li>
-        <li>Top 0.2% – National Fintech Olympiad 2024</li>
-        <li>McKinsey Future of Work Program, 2025</li>
-      </ul>
+    <section id="achievements" class="mt-5">
+      <h3 class="section-title">🏆 Achievements</h3>
+      <div class="row">
+        <div class="col-md-6"><p>🌟 SBI Life IdeationX 2.0 Campus Finalist</p></div>
+        <div class="col-md-6"><p>🥈 2nd Place – Data Hackathon, BITSoM</p></div>
+        <div class="col-md-6"><p>📊 Rank 44/907 – Ace the Case 2024, NMIMS</p></div>
+        <div class="col-md-6"><p>🏅 Top 0.2% – National Fintech Olympiad</p></div>
+      </div>
     </section>
 
     <!-- Skills -->
-    <section>
-      <h3 class="section-title">Skills</h3>
+    <section id="skills" class="mt-5">
+      <h3 class="section-title">⚡ Skills</h3>
       <p><b>Business:</b> Market Research, BMC, KPI, Competitive Analysis</p>
       <p><b>Finance:</b> DCF, LBO, Valuation, Cost-benefit Analysis</p>
-      <p><b>Technical:</b> Tableau, Power BI, SQL, Python, Excel, Figma, Jira</p>
+      <p><b>Technical:</b></p>
+      <div class="mb-2">Python <div class="progress"><div class="progress-bar bg-primary" style="width:80%"></div></div></div>
+      <div class="mb-2">SQL <div class="progress"><div class="progress-bar bg-success" style="width:70%"></div></div></div>
+      <div class="mb-2">Tableau / Power BI <div class="progress"><div class="progress-bar bg-info" style="width:85%"></div></div></div>
     </section>
 
     <!-- POR -->
-    <section>
-      <h3 class="section-title">Positions of Responsibility</h3>
+    <section id="por" class="mt-5">
+      <h3 class="section-title">📌 Positions of Responsibility</h3>
       <ul>
-        <li>Academic Committee, BITSoM – Managed CFA affiliation & proctoring tool for 320+ students</li>
-        <li>PM Club, BITSoM – Co-hosted national PM case competition & published company primers</li>
-        <li>IEEE GGSIPU – Led 4 cross-functional teams, increased women participation by 50%</li>
+        <li>Academic Committee – Managed CFA affiliation, implemented proctoring tool for 320+ students.</li>
+        <li>PM Club – Organized national competition, published company primers.</li>
+        <li>IEEE – Led cross-functional teams, expanded chapter, increased women participation by 50%.</li>
       </ul>
     </section>
 
-    <!-- Footer -->
-    <footer class="text-center mt-4">
-      <p>© 2025 Ragini Bhayana | Built with ❤️ on GitHub Pages</p>
-    </footer>
-
+    <!-- Contact -->
+    <section id="contact" class="mt-5 text-center">
+      <h3 class="section-title">📬 Contact</h3>
+      <p><i class="fas fa-envelope"></i> ragini@example.com</p>
+      <p><i class="fab fa-linkedin"></i> linkedin.com/in/raginibhayana</p>
+      <p><i class="fab fa-github"></i> github.com/raginibhayana</p>
+    </section>
   </div>
+
+  <footer class="text-center">
+    <p>© 2025 Ragini Bhayana | Built with 💜 on GitHub Pages</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
